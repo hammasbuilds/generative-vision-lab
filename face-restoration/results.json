@@ -1,0 +1,46 @@
+{
+  "n_faces": 1000,
+  "batch": 2,
+  "steps": 12500,
+  "lr": 1e-07,
+  "minutes": 16.26,
+  "before_val": {
+    "psnr": 29.981059956234756,
+    "n": 150
+  },
+  "final": {
+    "train": {
+      "psnr": 30.08514745875685,
+      "n": 150
+    },
+    "val": {
+      "psnr": 29.977178404735543,
+      "n": 150
+    },
+    "test": {
+      "psnr": 30.019504468101626,
+      "n": 50
+    }
+  },
+  "history": [
+    {
+      "step": 11000,
+      "loss": 0.05685871094465256,
+      "psnr": 29.981347992522878,
+      "n": 150
+    },
+    {
+      "step": 12000,
+      "loss": 0.03264595568180084,
+      "psnr": 29.978134657563174,
+      "n": 150
+    },
+    {
+      "step": 12500,
+      "loss": 0.04722322151064873,
+      "psnr": 29.97694368192544,
+      "n": 150
+    }
+  ],
+  "note": "GENERATOR-ONLY L1 fine-tune. The official recipe uses 4 discriminators + ArcFace identity loss on 4 GPUs at lr 2e-3 from scratch; this is not a reproduction of that."
+}

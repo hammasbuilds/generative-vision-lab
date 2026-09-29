@@ -1,0 +1,5 @@
+*.pth
+*.pt
+*.onnx
+__pycache__/
+*.zip

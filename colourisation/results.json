@@ -1,0 +1,58 @@
+{
+  "n": 2850,
+  "batch": 16,
+  "epochs": 100,
+  "lr": 1e-05,
+  "minutes": 6.18,
+  "before_val": {
+    "psnr": 22.232788980560258,
+    "n": 428
+  },
+  "final": {
+    "train": {
+      "psnr": 22.538911777118912,
+      "n": 428
+    },
+    "val": {
+      "psnr": 22.267055584580298,
+      "n": 428
+    },
+    "test": {
+      "psnr": 21.910742164468495,
+      "n": 142
+    }
+  },
+  "history": [
+    {
+      "epoch": 95,
+      "loss": 0.08269474513723817,
+      "psnr": 22.203165636175598,
+      "n": 428
+    },
+    {
+      "epoch": 96,
+      "loss": 0.0825673082554844,
+      "psnr": 22.231704676732953,
+      "n": 428
+    },
+    {
+      "epoch": 97,
+      "loss": 0.0826627890199003,
+      "psnr": 22.232971379993618,
+      "n": 428
+    },
+    {
+      "epoch": 98,
+      "loss": 0.08243084449688313,
+      "psnr": 22.21282314167443,
+      "n": 428
+    },
+    {
+      "epoch": 99,
+      "loss": 0.08252016287034666,
+      "psnr": 22.219586470620182,
+      "n": 428
+    }
+  ],
+  "note": "scratch U-Net, L->ab in Lab space. PSNR is a weak judge of colourisation - a plausible recolouring that differs from the original scores badly. Judge the images."
+}

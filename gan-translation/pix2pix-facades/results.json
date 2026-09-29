@@ -1,0 +1,10 @@
+{
+  "id": "pix2pix_facades",
+  "model": "pix2pix",
+  "dataset": "facades",
+  "epochs_total": 200,
+  "batch": 4,
+  "lr": 0.0002,
+  "minutes": 81.07,
+  "note": "GAN translation has no single scalar metric; judge on the saved images. FID against the target domain is the usual number if one is wanted."
+}
