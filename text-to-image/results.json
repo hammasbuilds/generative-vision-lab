@@ -1,0 +1,30 @@
+{
+  "model": "segmind/tiny-sd",
+  "n_pairs": 833,
+  "batch": 4,
+  "steps": 12600,
+  "lr": 1e-05,
+  "minutes": 44.63,
+  "best": {
+    "loss": 0.05133082016254775,
+    "step": 100
+  },
+  "history": [
+    {
+      "step": 11000,
+      "train": 0.0293365940451622,
+      "val": 0.060692103346809745
+    },
+    {
+      "step": 12000,
+      "train": 0.05421387031674385,
+      "val": 0.05820599489379674
+    },
+    {
+      "step": 12600,
+      "train": 0.05743683874607086,
+      "val": 0.05482854292495176
+    }
+  ],
+  "note": "no single scalar metric for text-to-image; val loss is the only automatic signal. Judge the fixed-prompt samples."
+}
