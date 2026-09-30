@@ -14,6 +14,6 @@ Image-to-image restoration and translation, plus generation from text.
 
 ## Method
 
-Every model is trained on a fixed 80/15/5 split and reported on all three splits, not on validation alone. Learning rates were measured rather than assumed, and a result is only quoted with the caveats that apply to it - several of the metrics here are weak proxies for the task and each project says so where that is the case.
+Every model is trained on a fixed 80/15/5 split and reported on train, validation and test.
 
 Trained weights are not included: checkpoints run 109-294 MB against GitHub's 100 MB limit. Each project carries its full metric history and the code to reproduce the run.

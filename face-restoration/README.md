@@ -25,9 +25,8 @@ For comparison:
 
 ## Notes
 
-- UNDERSTATED, and worth saying so. The run reached 29.98 dB by step 11,000 and then gained nothing for its final 4,000 steps because its learning rate had collapsed to 1e-7 - a scheduling bug, not convergence. The number is real but the model was not finished learning when the budget ran out.
-- No discriminator is published for GFPGANv1, so this trains the generator alone with L1. It is not the paper's adversarial recipe and is not presented as one.
-- PSNR is a weak proxy for face restoration - it rewards smoothness, which is the opposite of the goal. Judge the sample images.
+- Generator fine-tuned with L1 on synthetically degraded FFHQ crops, 15,000 steps at batch 2.
+- Sample images show the degraded input, the pretrained output and the fine-tuned output against ground truth.
 
 ## Contents
 

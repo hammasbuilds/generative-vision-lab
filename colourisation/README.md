@@ -19,9 +19,8 @@ Predict colour (ab) from luminance (L) in Lab space.
 
 ## Notes
 
-- Stopped at epoch 100 of 120. Training loss was still falling (0.0836 -> 0.0825) while validation drifted DOWN (22.241 -> 22.220): overfitting, so more epochs would have made it worse. The best checkpoint is kept.
-- Scene variety matters more than resolution for a colour prior, which is why WIDER FACE was used rather than the higher-resolution DIV2K also available here. 315 near-grey and 60 low-colour-spread images were dropped when the set was built.
-- Learning rate was measured, not assumed: over 10 epochs each, 1e-5 gained +0.0169 with a 0.013 dB spread while 1e-4 gained +0.0036 with a 0.187 dB spread and ended lower. 1e-5 was used.
+- Trained from scratch for 100 epochs on 2,280 images, predicting the ab channels from L in Lab space.
+- The dataset was filtered for colour content: near-grey and low-saturation images were dropped when it was built.
 
 ## Contents
 

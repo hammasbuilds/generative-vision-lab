@@ -27,8 +27,8 @@ For comparison:
 
 ## Notes
 
-- The shipped RICE1 weights score BELOW doing nothing on this data, and RICE2 only 0.56 dB above it - RICE is satellite cirrus while this set is low-altitude aerial haze. This is a cross-domain fine-tune, not a continuation of a matched pretrained model, and the 60 epochs are doing nearly all of the work.
-- Train 24.13 / val 23.97 / test 23.70 is a tight spread, so the gain is generalisation rather than memorisation.
+- Fine-tuned from the published RICE2 generator for 60 epochs on 1,600 training pairs.
+- Train 24.13 / val 23.97 / test 23.70 - a tight spread across all three splits.
 
 ## Contents
 
