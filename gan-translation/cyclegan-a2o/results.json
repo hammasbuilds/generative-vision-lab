@@ -1,0 +1,11 @@
+{
+  "id": "cyclegan_a2o",
+  "kind": "cycle",
+  "final": {
+    "val": {
+      "psnr": -0.09579118825495243,
+      "n": 60
+    }
+  },
+  "metric": "negative cycle-consistency L1 on held-out images; measures invertibility of the mapping, NOT output realism"
+}

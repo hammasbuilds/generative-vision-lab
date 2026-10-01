@@ -9,9 +9,9 @@ Image-to-image restoration and translation, plus generation from text.
 | [cloud-removal](cloud-removal/) | Satellite cloud removal | 23.696 |
 | [colourisation](colourisation/) | Colourisation | 21.911 |
 | [face-restoration](face-restoration/) | Face restoration | 30.020 |
-| [super-resolution](super-resolution/) | 4 models | see folder |
+| [super-resolution](super-resolution/) | 3 models | see folder |
 | [text-to-image](text-to-image/) | Text to image | 0.0513 |
-| [gan-translation](gan-translation/) | 3 models | see folder |
+| [gan-translation](gan-translation/) | 4 models | see folder |
 
 ## Method
 
