@@ -9,6 +9,7 @@ Reconstruct a 6x larger image from a downsampled input.
 | [msrgan](msrgan/) | msrgan - x6 super resolution (L1 + adversarial) | 27.574 |
 | [realesrnet](realesrnet/) | realesrnet - x6 super resolution (L1 only) | 27.432 |
 | [realesrgan](realesrgan/) | realesrgan - x6 super resolution (L1 + adversarial) | 27.352 |
+| [esrgan](esrgan/) | esrgan - x6 super resolution (L1 + adversarial) | 27.805 |
 
 ## Notes
 
