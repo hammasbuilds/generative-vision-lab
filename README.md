@@ -12,6 +12,7 @@ Image-to-image restoration and translation, plus generation from text.
 | [super-resolution](super-resolution/) | 4 models | see folder |
 | [text-to-image](text-to-image/) | Text to image | 0.0513 |
 | [gan-translation](gan-translation/) | 5 models | see folder |
+| [document-shadow-removal](document-shadow-removal/) | Document shadow removal | see folder |
 
 ## Method
 
