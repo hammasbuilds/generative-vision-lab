@@ -319,11 +319,27 @@ def main():
     mins = (time.perf_counter()-t0)/60
     if os.path.exists(best_p):
         model.load_state_dict(torch.load(best_p, map_location=device)["model"])
-    res = {"train": evaluate(model, DataLoader(ShadowSet(tr_i, False), batch_size=args.bs), device),
-           "val": evaluate(model, va, device), "test": evaluate(model, te, device)}
-    save_inference(model, device, os.path.join(args.out, "inference_docshadow"), "after", te_i)
+    # Only the LAST chunk pays for the full three-split report and the sample images.
+    #
+    # This block used to run at every chunk boundary: 800 train + 150 val + 50 test
+    # evaluations plus a rewrite of the inference panels, every 10 epochs. Nothing reads
+    # the intermediate train/test numbers - the queue reads the val metric to test its
+    # 0.2% floor, and the README reports the final three. train_sr.py had the identical
+    # bug and it cost 69 minutes per chunk there.
+    final_chunk = args.epochs >= (args.total or args.epochs)
+    splits = ("train", "val", "test") if final_chunk else ("val",)
+    res = {}
+    for s in splits:
+        if s == "train":
+            res[s] = evaluate(model, DataLoader(ShadowSet(tr_i, False), batch_size=args.bs), device)
+        elif s == "val":
+            res[s] = evaluate(model, va, device)
+        else:
+            res[s] = evaluate(model, te, device)
+    if final_chunk:
+        save_inference(model, device, os.path.join(args.out, "inference_docshadow"), "after", te_i)
     print(f"\n  trained in {mins:.1f} min; best val PSNR {best['psnr']:.3f} @ {best['epoch']}")
-    for s in ("train","val","test"):
+    for s in splits:
         print(f"  {s:7s} PSNR {res[s]['psnr']:.3f}  (n={res[s]['n']})")
     print(f"  BEFORE {before['psnr']:.3f} -> AFTER {res['val']['psnr']:.3f} "
           f"= {res['val']['psnr']-before['psnr']:+.3f} dB")
