@@ -1,12 +1,13 @@
 {
   "n_pairs": 1000,
   "batch": 8,
-  "epochs": 55,
+  "epochs": 56,
   "lr": 0.0002,
-  "minutes": 0.0,
+  "minutes": 134.9,
   "before_val": {
-    "psnr": 29.818709519121082,
-    "n": 150
+    "psnr": 27.148,
+    "n": 150,
+    "what": "published SD7K weights, no fine-tuning"
   },
   "final": {
     "train": {
@@ -23,5 +24,5 @@
     }
   },
   "domain_note": "fine-tuned on ISTD natural scenes, not documents",
-  "history": []
+  "best_epoch": 50
 }
