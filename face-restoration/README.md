@@ -1,6 +1,6 @@
 # Face restoration
 
-Restore degraded face crops. Degradation is synthesised at load time.
+Restore degraded face crops. The degradation is applied to clean FFHQ faces at load time.
 
 *A demonstration / portfolio project.*
 
@@ -17,16 +17,10 @@ Restore degraded face crops. Degradation is synthesised at load time.
 | val | 29.977 |
 | test | 30.020 |
 
-For comparison:
-
-| | |
-|---|---|
-| before fine-tuning | 27.130 |
-
 ## Notes
 
-- Generator fine-tuned with L1 on synthetically degraded FFHQ crops, 15,000 steps at batch 2.
-- Sample images show the degraded input, the pretrained output and the fine-tuned output against ground truth.
+- Generator fine-tuned with L1 on FFHQ crops degraded at load time, 12,500 steps at batch 2 (`results.json`).
+- Sample images show the degraded input, an earlier checkpoint of this run and the fine-tuned output against ground truth. The run resumed (its logged history starts at step 11,000) and the training script writes its `before` images when a run resumes, so they are not the pretrained weights.
 
 ## Contents
 

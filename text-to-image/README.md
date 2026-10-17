@@ -20,7 +20,7 @@ Generate an image from a text prompt.
 ## Notes
 
 - 12,600 steps at batch 4, lr 1e-5, on 833 pairs. The run was stopped when two successive checks gained less than 0.2% - the remaining 2,400 steps of the 15,000 budget were not spent.
-- The best validation loss, 0.0513, was recorded at step 100; the loss then moved between 0.052 and 0.061 for the rest of the run. Diffusion training loss tracks sample quality loosely, so the samples are the thing to look at: `samples/` holds the base model and the fine-tuned model on the same four prompts.
+- The best validation loss, 0.0513, was recorded at step 100; the loss then moved between 0.052 and 0.061 for the rest of the run. Diffusion training loss tracks sample quality loosely, so the samples are the thing to look at: `samples/` holds an earlier checkpoint of this run (written when the run resumed; its logged history starts at step 11,000, so this is not the base model) and the final model on the same four prompts and seed.
 - No held-out test split - this set is small enough that train and validation are the only two splits used.
 
 ## Contents

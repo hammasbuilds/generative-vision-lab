@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Generative Vision Lab</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232f5fd0'/%3E%3Crect x='6' y='9' width='9' height='14' rx='2' fill='%23fff' opacity='.55'/%3E%3Crect x='17' y='9' width='9' height='14' rx='2' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <span class="logo" aria-hidden="true"></span>
+    <div>
+      <h1>Generative Vision Lab</h1>
+      <p class="sub">Restoration, super-resolution, translation and text-to-image: the outputs our training runs saved, side by side</p>
+    </div>
+  </div>
+  <button id="theme" class="ghost" type="button" aria-label="Switch colour theme">Theme</button>
+</header>
+
+<div class="layout">
+  <nav class="tasks" aria-label="Tasks">
+    <label class="mobile-only" for="taskSelect">Task</label>
+    <select id="taskSelect" class="mobile-only"></select>
+    <div id="taskList" class="desktop-only"></div>
+  </nav>
+
+  <main>
+    <section class="card" id="taskCard">
+      <h2 id="taskTitle">Loading...</h2>
+      <dl class="facts">
+        <dt>Model</dt><dd id="taskModel"></dd>
+        <dt>Data</dt><dd id="taskData"></dd>
+      </dl>
+      <div id="scoreWrap"></div>
+    </section>
+
+    <section class="card" id="viewer">
+      <div class="viewer-head">
+        <h3 id="viewerTitle">Pick a sample</h3>
+        <div class="controls" id="controls"></div>
+      </div>
+      <div id="picker" class="picker" role="list"></div>
+      <div id="stage"></div>
+      <p id="note" class="note"></p>
+    </section>
+
+    <section class="card about" id="about">
+      <h3>About this page</h3>
+      <p>We built this lab to train and fine-tune image-to-image and text-to-image models on a fixed
+      train / validation / test split. This page shows what those runs saved: for each task, held-out
+      images with the input, the model's output and the ground truth, and the run's own scores.</p>
+      <p><strong>No model runs here.</strong> The trained checkpoints are 109-294 MB, over GitHub's
+      100 MB file limit, so they are not in the repository and this page cannot process an image you
+      upload. Everything you see is a file committed under a project's <code>samples/</code> folder.</p>
+      <p><strong>Scores.</strong> The table at the top is the run's <code>results.json</code>. The
+      number under each image is computed by this page from the saved PNG: RGB PSNR over the whole
+      image against the ground truth, so it can differ from the run's own protocol.</p>
+      <p><strong>"Earlier checkpoint" columns.</strong> The training scripts save their "before" images
+      when a run starts or resumes. Where a run resumed, that column is a mid-run checkpoint of the
+      same model, and it is labelled that way rather than as the starting weights.</p>
+      <p><strong>Zoom.</strong> Turn on Zoom and click any image to compare the same small region of
+      every column at full resolution; the super-resolution samples are 2K frames.</p>
+    </section>
+  </main>
+</div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
